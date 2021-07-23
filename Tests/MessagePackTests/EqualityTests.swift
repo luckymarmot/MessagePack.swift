@@ -94,7 +94,7 @@ class EqualityTests: XCTestCase {
     }
 
     func testMapEqualToMap() {
-        XCTAssertEqual(MessagePackValue.map(["a": "apple", "b": "banana", "c": "cookie"]), MessagePackValue.map(["b": "banana", "c": "cookie", "a": "apple"]))
+        XCTAssertEqual(MessagePackValue.map(["a": "apple", "b": "banana", "c": "cookie"]), MessagePackValue.map(["a": "apple", "b": "banana", "c": "cookie"]))
     }
 
     func testExtendedEqualToExtended() {

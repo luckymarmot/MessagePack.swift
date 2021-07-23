@@ -1,4 +1,5 @@
 import Foundation
+import OrderedCollections
 
 extension MessagePackValue {
     public init() {
@@ -33,7 +34,7 @@ extension MessagePackValue {
         self = .array(value)
     }
 
-    public init(_ value: [MessagePackValue: MessagePackValue]) {
+    public init(_ value: OrderedDictionary<MessagePackValue, MessagePackValue>) {
         self = .map(value)
     }
 

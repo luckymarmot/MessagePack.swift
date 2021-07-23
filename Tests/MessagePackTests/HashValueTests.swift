@@ -1,5 +1,7 @@
 import Foundation
 import XCTest
+import OrderedCollections
+
 @testable import MessagePack
 
 class HashValueTests: XCTestCase {
@@ -68,7 +70,7 @@ class HashValueTests: XCTestCase {
     }
 
     func testMapHashValue() {
-        let values: [MessagePackValue: MessagePackValue] = [
+        let values: OrderedDictionary<MessagePackValue, MessagePackValue> = [
             "a": "apple",
             "b": "banana",
             "c": "cookie",

@@ -1,4 +1,5 @@
 import Foundation
+import OrderedCollections
 
 /// The MessagePackValue enum encapsulates one of the following types: Nil, Bool, Int, UInt, Float, Double, String, Binary, Array, Map, and Extended.
 public enum MessagePackValue {
@@ -11,7 +12,7 @@ public enum MessagePackValue {
     case string(String)
     case binary(Data)
     case array([MessagePackValue])
-    case map([MessagePackValue: MessagePackValue])
+    case map(OrderedDictionary<MessagePackValue, MessagePackValue>)
     case extended(Int8, Data)
 }
 

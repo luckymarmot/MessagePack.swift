@@ -1,4 +1,5 @@
 import Foundation
+import OrderedCollections
 
 extension MessagePackValue {
     /// The number of elements in the `.Array` or `.Map`, `nil` otherwise.
@@ -290,7 +291,7 @@ extension MessagePackValue {
     }
 
     /// The contained dictionary if `.Map`, `nil` otherwise.
-    public var dictionaryValue: [MessagePackValue: MessagePackValue]? {
+    public var dictionaryValue: OrderedDictionary<MessagePackValue, MessagePackValue>? {
         if case .map(let dict) = self {
             return dict
         } else {

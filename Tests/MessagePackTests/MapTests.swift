@@ -1,9 +1,11 @@
 import Foundation
 import XCTest
+import OrderedCollections
+
 @testable import MessagePack
 
-func map(_ count: Int) -> [MessagePackValue: MessagePackValue] {
-    var dict = [MessagePackValue: MessagePackValue]()
+func map(_ count: Int) -> OrderedDictionary<MessagePackValue, MessagePackValue> {
+    var dict: OrderedDictionary<MessagePackValue, MessagePackValue> = [:]
     for i in 0 ..< Int64(count) {
         dict[.int(i)] = .nil
     }

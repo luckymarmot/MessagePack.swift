@@ -1,4 +1,5 @@
 import Foundation
+import OrderedCollections
 
 /// Joins bytes to form an integer.
 ///
@@ -88,8 +89,9 @@ func unpackArray(_ data: Subdata, count: Int, compatibility: Bool) throws -> (va
 /// - parameter compatibility: When true, unpacks strings as binary data.
 ///
 /// - returns: An dictionary of `count` entries and the not-unpacked remaining data.
-func unpackMap(_ data: Subdata, count: Int, compatibility: Bool) throws -> (value: [MessagePackValue: MessagePackValue], remainder: Subdata) {
-    var dict = [MessagePackValue: MessagePackValue](minimumCapacity: count)
+func unpackMap(_ data: Subdata, count: Int, compatibility: Bool) throws -> (value: OrderedDictionary<MessagePackValue, MessagePackValue>, remainder: Subdata) {
+
+    var dict = OrderedDictionary<MessagePackValue, MessagePackValue>(minimumCapacity: count)
     var lastKey: MessagePackValue? = nil
 
     let (array, remainder) = try unpackArray(data, count: 2 * count, compatibility: compatibility)
