@@ -1,29 +1,17 @@
 MessagePack.swift
 =================
 
-[![Version](https://img.shields.io/cocoapods/v/MessagePack.swift.svg?style=flat)](http://cocoapods.org/pods/MessagePack.swift)
-[![License](https://img.shields.io/cocoapods/l/MessagePack.swift.svg?style=flat)](http://cocoapods.org/pods/MessagePack.swift)
-[![Platform](https://img.shields.io/cocoapods/p/MessagePack.swift.svg?style=flat)](http://cocoapods.org/pods/MessagePack.swift)
+![License](https://img.shields.io/cocoapods/l/MessagePack.swift.svg?style=flat)
+![Platform](https://img.shields.io/cocoapods/p/MessagePack.swift.svg?style=flat)
 
 A fast, zero-dependency MessagePack implementation written in Swift 4. Supports Apple platforms and Linux.
 
+## Fork Changes
+
+* Uses [OrderedDictionary](https://github.com/apple/swift-collections) instead of a Dictionary
+* Supports only SPM
+
 ## Installation
-
-### CocoaPods
-
-To use CocoaPods, add the following to your Podfile:
-
-```ruby
-pod 'MessagePack.swift', '~> 4.0'
-```
-
-### Carthage
-
-To use Carthage, add the following to your Cartfile:
-
-```ogdl
-github "a2/MessagePack.swift" ~> 4.0
-```
 
 ### SPM (Swift Package Manager)
 
@@ -35,7 +23,7 @@ import PackageDescription
 let package = Package(
     name: "MyAwesomeApp",
     dependencies: [
-        .Package(url: "https://github.com/a2/MessagePack.swift.git", majorVersion: 4),
+        .Package(url: "https://github.com/luckymarmot/MessagePack.swift.git", branch: "master"),
     ]
 )
 ```
